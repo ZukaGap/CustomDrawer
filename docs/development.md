@@ -1,21 +1,26 @@
-# In the repo root folder.
 
-# Install dependencies.
+# Custom Drawer
 
-yarn
+## Installation
 
-# Move to ios folder.
+In the repo root folder.
 
-cd ios
+```bash
+  yarn install
+  cd ios && pod install && cd ..
+```
 
-# Install pod dependence.
 
-pod install && cd ..
+## Running Example App
 
-# Start the iOS app.
+To run example, run the following command
 
-yarn ios
+- For iOS
+```bash 
+  yarn ios
+```
 
-# Start the android app.
-
-yarn android
+- For Android
+```bash 
+  yarn android
+```
