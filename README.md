@@ -24,14 +24,12 @@
       float="left"
       alt="Android Example"
       width="299" height="648">
-    >
   </kbd>
 </div>
 
 ## Install Guide
 
 - Installation Guid - [Docs](https://github.com/ZukaGap/CustomDrawer/blob/main/docs/development.md)
-
 
 ## Developer
 
