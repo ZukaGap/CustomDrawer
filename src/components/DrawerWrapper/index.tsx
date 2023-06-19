@@ -1,6 +1,5 @@
 import React, {
   ForwardRefRenderFunction,
-  ReactNode,
   forwardRef,
   useCallback,
   useImperativeHandle,
@@ -34,6 +33,7 @@ import getStyleObj from './style';
 const {width: SCREEN_WIDTH} = Dimensions.get('screen');
 
 const THRESHOLD = SCREEN_WIDTH / 3;
+const OPENED_SIZE = SCREEN_WIDTH / 1.6;
 
 // stack screens where we want navigate from Drawer
 const TABS = [
@@ -79,7 +79,7 @@ const DrawerSceneWrapper: ForwardRefRenderFunction<
       if (translateX.value <= THRESHOLD) {
         translateX.value = withTiming(0);
       } else {
-        translateX.value = withTiming(SCREEN_WIDTH / 1.6, {
+        translateX.value = withTiming(OPENED_SIZE, {
           duration: 500,
           easing: Easing.bezier(0.25, 0.1, 0.25, 1),
         });
@@ -149,7 +149,7 @@ const DrawerSceneWrapper: ForwardRefRenderFunction<
     if (translateX.value > 0) {
       translateX.value = withTiming(0);
     } else {
-      translateX.value = withTiming(SCREEN_WIDTH / 2);
+      translateX.value = withTiming(OPENED_SIZE);
     }
   }, []);
 
@@ -170,6 +170,7 @@ const DrawerSceneWrapper: ForwardRefRenderFunction<
                 onPress={() => {
                   replace(item.key);
                 }}
+                disabled={item?.key === route?.name}
                 style={[
                   styles.screenBTN,
                   item?.key === route?.name && styles.screenBTNActive,
